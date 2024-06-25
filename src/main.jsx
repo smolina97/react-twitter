@@ -7,7 +7,7 @@ import './assets/css/index.css'
 export default function App() {
   return (
     <section className="follower-card gap-3">
-      <Card username="midudev" name="Miguel Angel Duran" />
+      <Card username="midudev" name="Miguel Angel Duran"/>
     </section> 
   )
 }

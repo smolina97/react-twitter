@@ -1,5 +1,16 @@
+import { Button } from "@material-tailwind/react";
+import { useState } from "react";
 
-export function Card ({username, name, isFollowing}){
+
+export function Card ({username, name}){
+
+    const [isFollowing, setFollowing] = useState(false)
+    const handleFollowing = () => setFollowing(!isFollowing)
+
+
+    const textFollowing = isFollowing  ? "Siguiendo" : "Seguir"
+    const buttonFollowing = `rounded-full ${isFollowing ? 'bg-blue-500/10 hover:bg-red-500/30 hover:text-red-900' : 'bg-blue-500/10 hover:bg-blue-500/30'}`
+
     return (
        <article className=" flex items-center justify-between" >
             <header className = " flex items-center gap-1">
@@ -12,9 +23,9 @@ export function Card ({username, name, isFollowing}){
                 </div>
             </header>
             <aside>
-                <button className=" ml-4 rounded-full py-1  px-2 font-bold border">
-                    Seguir
-                </button>
+                <Button variant="text" color="blue" className={buttonFollowing} onClick={handleFollowing}>
+                    {textFollowing}
+                </Button>
             </aside>
        </article>
     )
