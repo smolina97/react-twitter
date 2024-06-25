@@ -6,10 +6,13 @@ export function Card ({username, name}){
 
     const [isFollowing, setFollowing] = useState(false)
     const handleFollowing = () => setFollowing(!isFollowing)
+        
+    const [isHovering, setIsHovering] = useState(false);
+    const textFollowing = isFollowing
+      ? isHovering ? "Dejar de seguir" : "Siguiendo"
+      : "Seguir";
 
-
-    const textFollowing = isFollowing  ? "Siguiendo" : "Seguir"
-    const buttonFollowing = `rounded-full ${isFollowing ? 'bg-blue-500/10 hover:bg-red-500/30 hover:text-red-900' : 'bg-blue-500/10 hover:bg-blue-500/30'}`
+    const buttonFollowing = `rounded-full inline-block text-center w-40 ${isFollowing ? 'bg-blue-500/40 hover:bg-red-500/40 hover:text-red-900' : 'bg-blue-500/10 hover:bg-blue-500/30'}`
 
     return (
        <article className=" flex items-center justify-between" >
@@ -23,7 +26,9 @@ export function Card ({username, name}){
                 </div>
             </header>
             <aside>
-                <Button variant="text" color="blue" className={buttonFollowing} onClick={handleFollowing}>
+                <Button variant="text" color="blue" className={buttonFollowing} onClick={handleFollowing} 
+                    onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
+                >
                     {textFollowing}
                 </Button>
             </aside>
