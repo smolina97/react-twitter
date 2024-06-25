@@ -12,7 +12,7 @@ export function Card ({username, name}){
       ? isHovering ? "Dejar de seguir" : "Siguiendo"
       : "Seguir";
 
-    const buttonFollowing = `rounded-full inline-block text-center w-40 ${isFollowing ? 'bg-blue-500/40 hover:bg-red-500/40 hover:text-red-900' : 'bg-blue-500/10 hover:bg-blue-500/30'}`
+    const buttonFollowing = `rounded-full shadow-sm inline-block text-center w-40 ${isFollowing ? 'bg-blue-500/20 hover:bg-red-500/40 hover:text-red-900' : 'hover:bg-blue-500/30'}`
 
     return (
        <article className=" flex items-center justify-between" >
