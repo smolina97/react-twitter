@@ -2,7 +2,7 @@ import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 
 
-export function Card ({username, name}){
+export default function Card ({username, name}){
 
     const [isFollowing, setFollowing] = useState(false)
     const handleFollowing = () => setFollowing(!isFollowing)
@@ -35,5 +35,3 @@ export function Card ({username, name}){
        </article>
     )
 }
-
-export default Card
