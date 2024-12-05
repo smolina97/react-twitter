@@ -1,37 +1,54 @@
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
+export default function Card({ username, name }) {
+  const [isFollowing, setFollowing] = useState(false);
+  const handleFollowing = () => setFollowing(!isFollowing);
 
-export default function Card ({username, name}){
+  const [isHovering, setIsHovering] = useState(false);
+  const textFollowing = isFollowing
+    ? isHovering
+      ? "Dejar de seguir"
+      : "Siguiendo"
+    : "Seguir";
 
-    const [isFollowing, setFollowing] = useState(false)
-    const handleFollowing = () => setFollowing(!isFollowing)
-        
-    const [isHovering, setIsHovering] = useState(false);
-    const textFollowing = isFollowing
-      ? isHovering ? "Dejar de seguir" : "Siguiendo"
-      : "Seguir";
+  const buttonFollowing = `rounded-full shadow-sm inline-block text-center w-40 ${
+    isFollowing
+      ? "bg-blue-500/20 hover:bg-red-500/40 hover:text-red-900"
+      : "hover:bg-blue-500/30"
+  }`;
 
-    const buttonFollowing = `rounded-full shadow-sm inline-block text-center w-40 ${isFollowing ? 'bg-blue-500/20 hover:bg-red-500/40 hover:text-red-900' : 'hover:bg-blue-500/30'}`
-
-    return (
-       <article className=" flex items-center justify-between" >
-            <header className = " flex items-center gap-1">
-                <img className= " size-12 rounded-full" 
-                    src={`https://unavatar.io/${username}`}
-                    alt={username}></img>
-                <div className = "flex flex-col ml-3">
-                    <strong>{name}</strong>
-                    <span className = " opacity-60">@{username}</span>
-                </div>
-            </header>
-            <aside>
-                <Button variant="text" color="blue" className={buttonFollowing} onClick={handleFollowing} 
-                    onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}
-                >
-                    {textFollowing}
-                </Button>
-            </aside>
-       </article>
-    )
+  return (
+    <article className="flex items-center justify-between">
+      <header className="flex items-center gap-1">
+        <img
+          className="size-12 rounded-full"
+          src={`https://unavatar.io/${username}`}
+          alt={username}
+        />
+        <div className="flex flex-col ml-3">
+          <strong>{name}</strong>
+          <span className="opacity-60">@{username}</span>
+        </div>
+      </header>
+      <aside>
+        <Button
+          variant="text"
+          color="blue"
+          className={buttonFollowing}
+          onClick={handleFollowing}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
+          {textFollowing}
+        </Button>
+      </aside>
+    </article>
+  );
 }
+
+Card.propTypes = {
+  username: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
