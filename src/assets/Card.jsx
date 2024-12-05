@@ -1,4 +1,4 @@
-import { Button } from "@material-tailwind/react";
+import { Button , Avatar } from "@material-tailwind/react";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
@@ -22,8 +22,9 @@ export default function Card({ username, name }) {
   return (
     <article className="flex items-center justify-between">
       <header className="flex items-center gap-1">
-        <img
-          className="size-12 rounded-full"
+        <Avatar
+          variant="rounded" 
+          size="md"
           src={`https://unavatar.io/${username}`}
           alt={username}
         />

@@ -31,7 +31,7 @@ export default function CommentBoxTextarea() {
           <Button size="sm" color="red" variant="text" className="rounded-md">
             Cancel
           </Button>
-          <Button size="sm" className="rounded-md">
+          <Button size="sm" color="blue" className="rounded-md">
             Post Comment
           </Button>
         </p>
