@@ -1,6 +1,7 @@
-import { Button , Avatar } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import UserInfo from "./UserInfo";
 
 export default function Card({ username, name }) {
   const [isFollowing, setFollowing] = useState(false);
@@ -21,17 +22,8 @@ export default function Card({ username, name }) {
 
   return (
     <article className="flex items-center justify-between">
-      <header className="flex items-center gap-1">
-        <Avatar
-          variant="rounded" 
-          size="md"
-          src={`https://unavatar.io/${username}`}
-          alt={username}
-        />
-        <div className="flex flex-col ml-3">
-          <strong>{name}</strong>
-          <span className="opacity-60">@{username}</span>
-        </div>
+      <header>
+        <UserInfo username={username} name={name} />
       </header>
       <aside>
         <Button

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Textarea, Button } from "@material-tailwind/react";
+import UserInfo from "./UserInfo";
 
 export default function CommentBoxTextarea() {
   const [text, setText] = useState("");
@@ -12,7 +13,11 @@ export default function CommentBoxTextarea() {
   };
 
   return (
-    <div className="w-96">
+    <div className="w-96 ">
+      <div className=" flex mb-2">
+      <UserInfo username="exampleUser" name="Example Name"/>
+      </div>
+      
       <Textarea
         label="Message"
         value={text}
