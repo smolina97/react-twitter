@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Textarea, Button } from "@material-tailwind/react";
-import UserInfo from "./UserInfo";
+import UserInfo from "./components/UserInfo";
 
 export default function CommentBoxTextarea() {
   const [text, setText] = useState("");

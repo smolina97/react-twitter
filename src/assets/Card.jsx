@@ -1,7 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import UserInfo from "./UserInfo";
+import UserInfo from "./components/UserInfo";
 
 export default function Card({ username, name }) {
   const [isFollowing, setFollowing] = useState(false);
