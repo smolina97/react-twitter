@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
-import Card from "./assets/Card.jsx";
-import "./assets/css/index.css";
-import Profile from "./assets/Profile.jsx";
+import Card from "./assets/FollowCard.jsx";
+import Profile from "./assets/ProfileCard.jsx";
 import TextArea from "./assets/TextArea.jsx";
+import "./assets/css/index.css";
 export default function App() {
   return (
     <>
