@@ -1,13 +1,13 @@
-'use client'
-import { login } from './actions'
-import { useRouter } from 'next/navigation'
+'use client';
+import { login } from './actions';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSignupRedirect = () => {
-    router.push('/signup') // Redirige a la página de Sign Up
-  }
+    router.push('/signup'); // Redirige a la página de Sign Up
+  };
 
   return (
     <div>
@@ -22,5 +22,5 @@ export default function LoginPage() {
         Sign up
       </button>
     </div>
-  )
+  );
 }

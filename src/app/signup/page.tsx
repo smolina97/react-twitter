@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import { signup } from './actions'
+import { signup } from './actions';
 
 export default function SignUpPage() {
   return (
@@ -12,5 +12,5 @@ export default function SignUpPage() {
       <input id="password" name="password" type="password" required />
       <button formAction={signup}>Sign up</button>
     </form>
-  )
+  );
 }
