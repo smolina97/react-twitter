@@ -1,7 +1,6 @@
 'use client'
 
 import { signup } from './actions'
-import { useRouter } from 'next/navigation'
 
 export default function SignUpPage() {
   return (
